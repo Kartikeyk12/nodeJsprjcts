@@ -10,7 +10,9 @@ async function generateNewShortURL(req, res) {
     redirectUrl: body.url,
     visitHistory: [],
   });
-  return res.json({ id: shortId });
+  return res.render('home',{
+    id:shortId
+  });
 }
 async function getIdHandler(req, res) {
   const shortId = req.params.shortid;
@@ -32,10 +34,10 @@ async function getIdHandler(req, res) {
   return res.redirect(entry.redirectUrl);
 }
 async function getAnalytics(req, res) {
-  const shortId = req.params.shortId;
+  const shortId = req.params.shortid;
   const result = await URL.findOne({ shortId });
   return res.json({
-    totalClicks: result.visitHistory.lenght,
+    totalClicks: result.visitHistory.length,
     analytics: result.visitHistory,
   });
 }
