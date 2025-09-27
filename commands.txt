@@ -1,0 +1,5 @@
+- mongosh
+- show dbs 
+- use "db name"
+- show collections 
+- db.dbName.find({}) // For all

@@ -1,6 +1,4 @@
-const { timeStamp } = require("console");
 const mongoose = require("mongoose");
-const { type } = require("os");
 
 const urlSchema = new mongoose.Schema(
   {
